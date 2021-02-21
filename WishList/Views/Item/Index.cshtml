@@ -3,13 +3,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Wishlist</h1>
+<div class="container">
+    <h1>Wishlist</h1>
 
-<a asp-action="create">Add item</a>
+    <a class="btn btn-sm btn-primary mb-4" asp-action="create">Add item</a>
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>@item.Description<a asp-action="delete" asp-route-id="@item.Id">delete</a></li>
-    }
-</ul>
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+        <li class="list-group-item">@item.Description <a class="btn btn-sm btn-danger" asp-action="delete" asp-route-id="@item.Id">delete</a></li>
+}
+    </ul>
+</div>
